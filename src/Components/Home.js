@@ -6,10 +6,11 @@ export default class Home extends Component {
         super()
 
         this.state = {
-            buttonHover: 'Grow',
-            buttonSize: 'Medium',
             color: 'Blue',
-            toggleArrow: false
+            buttonSize: 'Medium',
+            buttonHover: 'Grow',
+            buttonClick: 'Depress',
+            toggleArrow: false,
         }
         this.toggleArrow = this.toggleArrow.bind(this)
         this.toggleArrowOff = this.toggleArrowOff.bind(this)
@@ -32,17 +33,30 @@ export default class Home extends Component {
                     <option>Red</option>
                     <option>Green</option>
                 </select>
+                <select onChange={e => this.setState({buttonSize: e.target.value})}>
+                    <option>Medium</option>
+                    <option>Small</option>
+                    <option>Large</option>
+                </select>
                 <select onChange={e => this.setState({buttonHover: e.target.value})}>
                     <option>Grow</option>
                     <option>Widen</option>
                     <option>Float</option>
-                    <option>Hover ›</option>
+                    {/* <option>Hover ›</option> */}
+                    <option>Color</option>
+                    <option>SlideIn</option>
                 </select>
-                <br/><br/>
+                <select onChange={e => this.setState({buttonClick: e.target.value})}>
+                    <option>Depress</option>
+                    <option>TBD</option>
+                    <option>TBD</option>
+                </select>
+                <br/><br/><br/><br/>
                 <Button 
-                    hover={this.state.buttonHover} 
-                    size={this.state.buttonSize} 
                     color={this.state.color}
+                    size={this.state.buttonSize} 
+                    hover={this.state.buttonHover} 
+                    press={this.state.buttonClick}
                     arrow={this.state.toggleArrow}
                     toggleArrow={this.toggleArrow}
                     toggleArrowOff={this.toggleArrowOff}

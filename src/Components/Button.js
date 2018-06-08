@@ -2,25 +2,24 @@ import React from 'react'
 
 export default function Button(props) {
     return (
-        <div>
-            <button className={`Button ${props.size} ${props.hover} ${props.color}`}
+        <div className='ButtonParent'>
+            <button className={`Button 
+                                ${props.color}
+                                ${props.size} 
+                                ${props.size}${props.hover} 
+                                ${props.color}${props.hover} 
+                                ${props.color}${props.press}`}
                 onClick={props.click}
                 onMouseOver={props.toggleArrow}
                 onMouseOut={props.toggleArrowOff}
             >
-                {
-                    props.arrow
-                        ?
-                        <div>
-                            <span className={`shiftText1 ${props.arrow ? 'shiftText' : null}`}>Click Me</span>
-                            <span className={`shiftArrow ${props.arrow ? 'shiftArrow1' : null}`}>{props.arrow ? '>' : null}</span>
-                        </div>
-                        :
-                        'Click Me'
-            }
-
+                <span className={`shiftText1 ${props.arrow ? 'shiftText' : null}`}>Click Me</span>
+                <span className={`shiftArrow ${props.arrow ? 'shiftArrow1' : null}`}>{props.arrow ? '>' : null}</span>
+                <div className={`btnLeftSlide ${props.hover}`}></div>
             </button>
-            <div className='roundShadow'></div>
+            
+
+            {/* <div className='roundShadow'></div> */}
         </div>
     )
 }

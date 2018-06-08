@@ -2,13 +2,23 @@
   text-align: center;
   font-family: 'Raleway', sans-serif;
   margin-top: 300px;
+  --blue: #423bfd;
+  --darkblue: #0a02d0;
+  --yellow: #f9dc6c;
+  --darkyellow: #f5c50a;
+  --red: #fb4143;
+  --darkred: #d20407;
+  --green: #5cd193;
+  --darkgreen: #2c9b60;
+}
+
+.ButtonParent {
+  position: relative;
 }
 
 .Button {
-  width: 80px;
-  height: 40px;
-  padding: 10px;
   cursor: pointer;
+  position: relative;
   color: white;
   background: #aaa;
   border-radius: 6px;
@@ -16,14 +26,7 @@
   border: 1px solid #999;
   outline: none;
   box-shadow: 0px 2px 2px #ddd;
-  transition: .3s;
-  font-family: 'Raleway', sans-serif;  
-}
-
-.shiftText {
-  transform: translateX(-4px);
-  display: inline-block;
-  color: lightgreen;
+  font-family: 'Raleway', sans-serif;
   transition: .3s;
 }
 
@@ -37,38 +40,139 @@
   transition: .3s;  
 }
 
-.Grow:hover {
-  width: 90px;
-  height: 45px;
-  /* padding: 14px 12px; */
-  /* transform: translateY(-2px) */
-  /* box-shadow: 0px 3px 4px #ddd; */
+.Blue {
+  background: var(--blue)
 }
 
-.Widen:hover {
-  width: 90px;
+.Yellow {
+  background: var(--yellow)
 }
 
-.Float:hover {
+.Red {
+  background: var(--red)
+}
+
+.Green {
+  background: var(--green)
+}
+
+.shiftText {
+  transform: translateX(-4px);
+  display: inline-block;
+  /* color: lightgreen; */
+  transition: .3s;
+}
+
+.Small {
+  padding: 8px 10px;
+  font-size: 10px
+}
+
+.Medium {
+  padding: 10px 12px;
+}
+
+.Large {
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+/* ----------------------------------------------------------- */
+
+
+.SmallGrow:hover {
+  padding: 9px 11px;  
+}
+
+.MediumGrow:hover {
+  padding: 12px 14px;
+}
+
+.LargeGrow:hover {
+  padding: 16px 18px;  
+}
+
+.SmallWiden:hover {
+  padding: 8px 12px;  
+}
+
+.MediumWiden:hover {
+  padding: 10px 14px;
+}
+
+.LargeWiden:hover {
+  padding: 14px 18px;
+}
+
+.SmallFloat:hover {
   transform: translateY(-2px);
   box-shadow: 0px 2px 2px #999;  
 }
 
-.Blue {
-  background: #423bfd;
+.MediumFloat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 2px 2px #999;  
 }
 
-.Yellow {
-  background: #f9dc6c;
+.LargeFloat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 2px 2px #888;  
 }
 
-.Red {
-  background: #fb4143;
+.BlueColor:hover {
+  background: var(--darkblue);
 }
 
-.Green {
-  background: #5cd193
+.YellowColor:hover {
+  background: var(--darkyellow);
 }
+
+.RedColor:hover {
+  background: var(--darkred);
+}
+
+.GreenColor:hover {
+   background: var(--darkgreen);
+}
+
+.btnLeftSlide {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #bbb;
+  border-radius: 6px;  
+  border: 1px solid #999;
+  transition: .2s;  
+}
+
+.SlideIn:hover {
+  width: 100%;
+  
+}
+
+/* ----------------------------------------------------------- */
+
+.BlueDepress:active {
+  background: var(--darkblue);
+  border: 3px solid var(--blue);
+  padding: 9px 11px;
+  transition: 0s;
+}
+
+.YellowDepress:active {
+  background: var(--darkyellow);
+}
+
+.RedDepress:active {
+  background: var(--darkred);
+}
+
+.GreenDepress:active {
+  background: var(--darkgreen);
+}
+
 
 .roundShadow {
   width: 50px;
