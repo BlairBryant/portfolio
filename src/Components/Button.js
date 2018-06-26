@@ -7,7 +7,8 @@ export default function Button(props) {
                                 ${props.color}
                                 ${props.size} 
                                 ${props.size}${props.hover} 
-                                ${props.color}${props.hover} 
+                                ${props.color}${props.hover}
+                                ${props.press} 
                                 ${props.color}${props.press}`}
                 onClick={props.click}
                 onMouseOver={props.toggleArrow}
