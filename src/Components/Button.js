@@ -12,7 +12,7 @@ export default function Button(props) {
                                 ${props.color}${props.press}`}
                 onClick={props.click}
                 onMouseOver={props.toggleArrow}
-                onMouseOut={props.toggleArrowOff}
+                onMouseOut={props.toggleArrow}
             >
                 <span className={`shiftText1 ${props.arrow ? 'shiftText' : null}`}>Click Me</span>
                 <span className={`shiftArrow ${props.arrow ? 'shiftArrow1' : null}`}>{props.arrow ? '>' : null}</span>
