@@ -28,7 +28,7 @@ export default class Home extends Component {
     }
 
     clearModal = () => {
-        this.setState({modal: 'Select Modal'})
+        setTimeout(() => this.setState({modal: 'Select Modal'}), 1000)
     }
 
     render() {
@@ -83,12 +83,19 @@ export default class Home extends Component {
                     onMouseOut={() => this.setState({mouseToggle: false})}>Click</div>
                 </div>
 
-                <Message toggle={this.state.messageToggle} toggleMessage={this.toggleMessage}/>
+                <Message toggle={this.state.messageToggle} 
+                         toggleMessage={this.toggleMessage} 
+                         color={this.state.color}
+                />
 
                 {
                     this.state.modal !== 'Select Modal'
                         ?
-                        <Modal clearModal={this.clearModal} modalName={this.state.modal}/>
+                        <Modal 
+                            clearModal={this.clearModal} 
+                            modalName={this.state.modal}
+                            color={this.state.color}
+                        />
                         :
                         null
                 }
