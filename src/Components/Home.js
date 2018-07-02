@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from './Header'
 import Button from './Button'
 import Modal from './Modal'
 import Message from './Message'
@@ -28,12 +29,14 @@ export default class Home extends Component {
     }
 
     clearModal = () => {
-        setTimeout(() => this.setState({modal: 'Select Modal'}), 1000)
+        // setTimeout(() => this.setState({modal: 'Select Modal'}), 1000)
+        this.setState({modal: 'Select Modal'})
     }
 
     render() {
         return (
             <div className='Home'>
+                <Header color={this.state.color}/>
                 <select onChange={e => this.setState({ modal: e.target.value })}>
                     <option>Select Modal</option>
                     <option>Modal1</option>
@@ -41,6 +44,7 @@ export default class Home extends Component {
                     <option>Modal3</option>
                     <option>Modal4</option>
                     <option>Modal5</option>
+                    <option>Modal6</option>
                 </select>
                 <br />
                 <select onChange={e => this.setState({ color: e.target.value })}>

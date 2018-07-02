@@ -1,7 +1,27 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 .App {
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  margin-top: 300px;
   --lightblue: lightblue;
   --blue: #423bfd;
   --darkblue: #0a02d0;
@@ -53,12 +73,20 @@
   background: var(--blue)
 }
 
+.BlueGradient {
+  background: linear-gradient(to right, var(--blue), var(--lightblue))
+}
+
 .lightYellow {
   background: var(--lightyellow)
 }
 
 .Yellow {
   background: var(--yellow)
+}
+
+.YellowGradient {
+  background: linear-gradient(to right, var(--yellow), var(--lightyellow))
 }
 
 .lightRed {
@@ -69,12 +97,20 @@
   background: var(--red)
 }
 
+.RedGradient {
+  background: linear-gradient(to right, var(--red), var(--lightred))
+}
+
 .lightGreen {
   background: var(--lightgreen)
 }
 
 .Green {
   background: var(--green)
+}
+
+.GreenGradient {
+  background: linear-gradient(to right, var(--green), var(--lightgreen))
 }
 
 .shiftText {
@@ -100,6 +136,29 @@
 
 /* ----------------------------------------------------------- */
 
+.header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 24px;
+  color: white;
+}
+
+.headerList {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------ */
 
 .SmallGrow:hover {
   padding: 9px 11px;  
@@ -236,12 +295,12 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  transition: .5s
 }
 
 .outer2 {
   width: 70px;
   height: 48px;
-  transition: .5s;
   border: 1px solid rgba(0, 0, 0, 0);
   top: 6px;
   left: 5px;
@@ -279,8 +338,8 @@
 }
 
 .Modal1 {
-	width: 40%;
-	height: 70%;
+	width: 30%;
+	height: 60%;
   border-radius: 8px;
   padding-top: 24px;
   box-sizing: border-box;
@@ -311,7 +370,7 @@
 }
 
 .Modal2 {
-	width: 30%;
+	width: 22%;
 	height: 50%;
   border-radius: 8px;
   padding-top: 24px;
@@ -334,13 +393,13 @@
   }
   100% {
     top: 50%;
-    width: 30%;
+    width: 22%;
     height: 50%;
   }
 }
 
 .Modal3 {
-	width: 40%;
+	width: 25%;
 	height: 30%;
   border-radius: 8px;
   padding-top: 24px;
@@ -354,7 +413,7 @@
 	animation-name: rotate;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-out;
-  animation-duration: 700ms;
+  animation-duration: 300ms;
 }
 
 @keyframes rotate {
@@ -362,13 +421,13 @@
     width: 0%;
     height: 0%;
     font-size: 0px;
-    transform: translate(-50%, -50%) rotate(0turn) ;
+    transform: translate(-50%, -50%) rotate(-120deg) ;
   }
   100% {
-    width: 40%;
+    width: 25%;
     height: 30%;
     font-size: 1em;
-    transform: translate(-50%, -50%) rotate(1turn) ;
+    transform: translate(-50%, -50%) rotate(0deg) ;
   }
 }
 
@@ -393,16 +452,14 @@
 @keyframes fade {
   0% {
     opacity: 0;
-    /* font-size: 0px; */
   }
   100% {
     opacity: 1;
-    /* font-size: 1em; */
   }
 }
 
 .Modal5 {
-	width: 25%;
+	width: 20%;
 	height: 30%;
   border-radius: 8px;
   padding-top: 24px;
@@ -422,12 +479,64 @@
 @keyframes skew {
   0% {
     transform: translate(-50%, -50%) skew(20deg, 30deg);
-    
-    /* font-size: 0px; */
   }
   100% {
     transform: translate(-50%, -50%) skew(0deg, 0deg);    
-    /* font-size: 1em; */
+  }
+}
+
+.Modal6 {
+	width: 22%;
+	height: 50%;
+  border-radius: 8px;
+  padding-top: 24px;
+  box-sizing: border-box;
+  position: absolute;
+  background: white;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	animation-name: crashIn;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+  animation-duration: 500ms;
+}
+
+@keyframes crashIn {
+  0% {
+    top: 100%;
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    top: 50%;
+    width: 22%;
+    height: 50%;
+  }
+}
+
+.Modal6Left {
+	width: 11%;
+	height: 50%;
+  border-radius: 8px;
+  padding-top: 24px;
+  box-sizing: border-box;
+	position: absolute;
+	right: 90%;
+	top: 50%;
+  /* transform: translate(-50%, -50%); */
+	animation-name: crashLeft;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+  animation-duration: 500ms;
+}
+
+@keyframes crashLeft {
+  0% {
+    right: 90%;
+  }
+  100% {
+    right: 50%;
   }
 }
 
@@ -437,7 +546,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  /* background: lightblue; */
   position: fixed;
   bottom: 16px;
   right: 16px;
@@ -523,5 +631,69 @@
 .chatBoxInner {
   width: 100%;
   height: 30%;
-  background: teal;
+  color: white;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+.chatBoxInner h3 {
+  color: #ddd;
+  font-size: .8em;
+  line-height: 2
+}
+
+.chatBoxBox {
+  width: 80%;
+  height: 30%;
+  position: relative;
+  top: -30px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px #ddd;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding: 12px;
+  text-align: left;
+}
+
+.chatBoxBox h3 {
+  font-size: .8em;
+  color: #333;
+  padding-bottom: 8px;
+}
+
+.chatBoxBox h4 {
+  font-size: .7em;
+  color: #aaa;
+}
+
+.chatImageDiv {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.chatAvatar {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chatBoxBox button {
+  width: 60%;
+  height: 24px;
+  border-radius: 16px;
+  border-style: none;
+  padding: 4px;
+  box-sizing: border-box;
+  font-size: .7em;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  outline: none;
 }
